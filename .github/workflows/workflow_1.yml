@@ -11,17 +11,19 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+        
 
+      - name: Install Dependencies
+        run: |
+          sudo apt update && sudo apt install -y openssh-client jq curl
+
+          
       - name: Build and Run python app
         run: |
           sudo apt install ffmpeg unzip zip
           pip3 install google-genai flask requests together 
           unzip mynew.zip
           python3 mynew/app.py
-
-      - name: Install Dependencies
-        run: |
-          sudo apt update && sudo apt install -y openssh-client jq curl
           
 
       - name: Start NPort Tunnel and Save URL
