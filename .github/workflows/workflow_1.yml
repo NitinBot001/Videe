@@ -21,9 +21,11 @@ jobs:
       - name: Build and Run python app
         run: |
           sudo apt install ffmpeg unzip zip
+          # Install whisper timestamped
+          pip3 install git+https://github.com/linto-ai/whisper-timestamped
           pip3 install google-genai flask requests together 
           unzip mynew.zip
-          python3 mynew/app.py
+          python3 mynew/app.py &
           
 
       - name: Start NPort Tunnel and Save URL
