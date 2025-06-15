@@ -24,7 +24,7 @@ jobs:
           pip3 install git+https://github.com/linto-ai/whisper-timestamped
           pip3 install google-genai flask requests together 
           unzip mynew.zip
-          python3 mynew/app.py &
+          python3 app.py &
           
 
       - name: Generate Random Subdomain
